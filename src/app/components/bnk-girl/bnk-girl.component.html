@@ -4,6 +4,6 @@
     [alt]="member.name" [title]="member.name">
   </div>
   <div class="card-body">
-    <h5 class="card-title">{{member.name}}</h5>
+    <h5 class="card-title">{{ member.name | bnkSuffix: 'upper' }}</h5>
   </div>
 </div>
