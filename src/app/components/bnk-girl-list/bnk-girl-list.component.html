@@ -1,6 +1,5 @@
-<h1>BNK48</h1>
-<div class="container">
-  <div *ngFor="let member of members" >
-    <app-bnk-girl [member]="member"></app-bnk-girl>
+<div class="row card-deck">
+  <div class="col-sm-4 mb-3" *ngFor="let member of members" >
+    <app-bnk-girl [member]=member ></app-bnk-girl>
   </div>
 </div>
