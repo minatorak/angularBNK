@@ -1,4 +1,4 @@
-import { AuthService } from './../../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
     this.authService.authen(this.loginForm.value)
                     .subscribe(
                     data => {
-                      console.log(data);
+                      this.authService.setToken(data.token);
                       this.router.navigate(['/admin']);
                     },
                     error => alert(error.message

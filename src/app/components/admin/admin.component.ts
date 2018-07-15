@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { BnkService } from './../../services/bnk.service';
+import { BnkService } from '../../services/bnk.service';
 import { Component, OnInit } from '@angular/core';
 import { Member } from '../../models/member';
 

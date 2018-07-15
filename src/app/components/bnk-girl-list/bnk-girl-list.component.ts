@@ -1,5 +1,5 @@
-import { BnkService } from './../../services/bnk.service';
-import { Member } from './../../models/member';
+import { BnkService } from '../../services/bnk.service';
+import { Member } from '../../models/member';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

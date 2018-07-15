@@ -1,4 +1,4 @@
-import { Member } from './../../models/member';
+import { Member } from '../../models/member';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({

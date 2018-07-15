@@ -1,8 +1,9 @@
+import { TokenInterceptorService } from './interceptors/token-interceptor.service';
 import { AdminComponent } from './components/admin/admin.component';
 import { BnkGirlListComponent } from './components/bnk-girl-list/bnk-girl-list.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule, Route } from '@angular/router';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -14,6 +15,7 @@ import { BnkSuffixPipe } from './pipes/bnk-suffix.pipe';
 import { LoginComponent } from './components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MemberInformationComponent } from './components/member-information/member-information.component';
+
 
 
 const routes: Route[] = [
@@ -45,7 +47,11 @@ const routes: Route[] = [
     RouterModule.forRoot(routes),
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

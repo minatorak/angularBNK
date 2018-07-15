@@ -1,7 +1,7 @@
-import { Member } from './../models/member';
+import { Member } from '../models/member';
 
 import { Injectable } from '@angular/core';
-import { Observable } from '../../../node_modules/rxjs';
+import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Feed } from '../models/feed';
@@ -25,5 +25,9 @@ export class BnkService {
 
   informationMember(id: string) {
     return this.http.get<Member>(`${environment.api_url}/bnk/members/${id}`);
+  }
+
+  pathinformationMember(id: string, data: Member) {
+    return this.http.patch(`${environment.api_url}/bnk/members/${id}`, data);
   }
 }
