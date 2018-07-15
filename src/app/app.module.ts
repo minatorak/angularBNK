@@ -19,6 +19,7 @@ import { AuthGuard } from './guard/auth.guard';
 
 
 
+
 const routes: Route[] = [
   {path: '', pathMatch: 'full', redirectTo: '/dashboard'},
   {path: 'dashboard', component: DashboardComponent},
@@ -40,7 +41,8 @@ const routes: Route[] = [
     BnkSuffixPipe,
     LoginComponent,
     AdminComponent,
-    MemberInformationComponent
+    MemberInformationComponent,
+
   ],
   imports: [
     BrowserModule,
