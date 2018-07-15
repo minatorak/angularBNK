@@ -1,0 +1,15 @@
+<ul class="list-group center" style="background-color: transparent">
+  <li class="table table-striped" style="display: flex" *ngFor="let item of list">
+    <div class="mx-auto">
+      <div class="card align-items-center shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
+        <img class="card-img-top" [src]="item.imgUrl"  alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{ item.name }}</h5>
+        </div>
+        <div class="card-body">
+          <button class="center" type="button" class="btn btn-primary" (click)="editEnter(item._id)">แก้ไข</button>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>

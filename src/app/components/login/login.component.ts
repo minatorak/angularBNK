@@ -1,8 +1,7 @@
 import { AuthService } from './../../services/auth.service';
-import { environment } from './../../../environments/environment';
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,17 +12,28 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
 
-  constructor(private formbuild: FormBuilder, private authService: AuthService) { }
+  constructor(private formbuild: FormBuilder, private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
     this.loginForm = this.formbuild.group( {
       login: '',
       password: ''
     });
+    this.loginForm.setValue({
+      login: 'test',
+      password: ''
+    });
   }
 
   login() {
     this.authService.authen(this.loginForm.value)
-                    .subscribe(data => console.log(data));
+                    .subscribe(
+                    data => {
+                      console.log(data);
+                      this.router.navigate(['/admin']);
+                    },
+                    error => alert(error.message
+                    )
+                  );
   }
 }

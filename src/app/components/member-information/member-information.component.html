@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <form class="form" [formGroup]="editInformationForm" *ngIf="editInformationForm" >
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" class="form-control" formControlName="name">
+        </div>
+        <div class="form-group">
+          <label>ImageUrl</label>
+          <input type="text" class="form-control" formControlName="imgUrl">
+        </div>
+        <div class="form-group">
+          <label>Instagram</label>
+          <input type="text" class="form-control" formControlName="instagramId">
+        </div>
+        <button type="button" class="btn btn-outline-primary">Submit</button>
+        <button type="button" class="btn btn-outline-info" (click)="reset()">Reset</button>
+      </form>
+    </div>
+  </div>
+</div>
